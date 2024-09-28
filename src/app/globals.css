@@ -3,11 +3,22 @@
 @tailwind utilities;
 
 :root {
+  /* Colors */
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #ff5200;
+  --success-color: #74ff74;
+  --error-color: #ff6767;
+  --subheading-color:#000000a0;
+
+  /* Typography */
+  --font-family: 'Arial', sans-serif;
+  --base-font-size: 16px;
+  --heading-font-size: 32px;
+  --heading-font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -24,4 +35,112 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.heading-1{
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+}
+.main-web-container{
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  overflow-x: hidden;
+}
+/* Food Category Section */
+.food-category{
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.food-category-card{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background);
+  height: 180px;
+  width: 144px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.food-category-cards{
+  display:flex;
+  max-width: auto;
+  justify-content: center;
+  flex-direction: row;
+  gap:20px;
+  overflow-x: auto;
+}
+.food-category-cards::-webkit-scrollbar {
+  display: none;
+}
+/* Restaurant Promotion Section */
+
+.rp-card{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 268px;
+  height: 188px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0) 30%), url("/images/burger.jpg");
+  background-size: cover;
+  border-radius: 20px;
+}
+.rp-cards{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.rp-offer-text{
+  color: var(--background);
+  font-size: 20px;
+  font-weight: 1000;
+  margin: 10px;
+}
+.rp-product{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: start;
+}
+.rp-product-heading{
+  color: var(--foreground);
+  font-size: var(--base-font-size);
+  font-weight: 800;
+}
+.rp-product-subheading{
+  color: var(--subheading-color);
+  font-size: var(--base-font-size);
+  font-weight: 600;
+}
+.rp-product-ratings{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.rp-rating-star {
+  background-color: #168A3E; 
+  font-size: 12px;
+  color: white;
+  border-radius: 50%; 
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rp-duration-text{
+  font-weight: 700;
 }
